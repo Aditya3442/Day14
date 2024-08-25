@@ -1,0 +1,16 @@
+class Solution {
+    public static int jump(int n,int[] dp){
+        if(n==0)
+            return 1;
+        if(n==1)
+            return 1;
+    
+        if(dp[n]!=0)
+            return dp[n];
+        return dp[n]=jump(n-1,dp)+jump(n-2,dp);
+    }
+    public int climbStairs(int n) {
+        int dp[]=new int[n+1];
+        return jump(n,dp);
+    }
+}
